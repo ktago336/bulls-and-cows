@@ -7,22 +7,24 @@
 #include <experimental/filesystem>
 #include<fstream>
 using namespace std;
-void threadConnect()
-{
-    system("ftp -s:connect.bat");
-}
-void getData()
-{
-    system("cls");
-    system("ftp -i -s:get.bat>NUL");
-    system("cls");
-}
-void sendData()
-{
-    system("cls");
-    system("ftp -i -s:send.bat>NUL");
-    system("cls");
-}
+//void threadConnect()
+//{
+//    system("ftp -s:connect.bat");
+//}
+//void getData()
+//{
+//    system("cls");
+//    system("ftp -i -s:get.bat>NUL");
+//    system("cls");
+//}
+//void sendData()
+//{
+//    system("cls");
+//    system("ftp -i -s:send.bat>NUL");
+//    system("cls");
+
+
+
 string player1()
 {
     SetConsoleCP(1251);
@@ -35,12 +37,12 @@ string player1()
     slovo.open("word.txt");
     slovo << word;
     slovo.close();
-    sendData();
+    //sendData();
     return word;
 }
 void player2(string X)
 {
-    getData();
+    /*getData();*/
     X = '0';
     ifstream Xw("word.txt");
     Xw >> X;
@@ -82,7 +84,7 @@ void player2(string X)
                 winF.open("resultH.txt");
                 winF << hod;
                 winF.close();
-                sendData();
+                /*sendData();*/
                 system("cls");
 
                 win = 1;
@@ -108,10 +110,10 @@ void game()
         goto Menu;
     } break;
     case '2':player2(Xword); break;
-    case '3': getData(); goto Menu; break;
+    case '3': /*getData*/; goto Menu; break;
     case '4': 
     {
-        getData();
+        /*getData();*/
         string winner, hod;
         ifstream Xw("resultW.txt");
         Xw >> winner;
